@@ -1,0 +1,23 @@
+{
+  "name": "system-zarzadzania-zadaniami-domowymi",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "dotenv": "^16.5.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-ejs-layouts": "^2.5.1",
+    "method-override": "^3.0.0",
+    "mongodb": "^6.17.0"
+  },
+  "description": "A simple Node.js web application for managing homework tasks.  \r Project completed for the university assignment — “System zarządzania zadaniami domowymi” (Homework Management System).",
+  "devDependencies": {}
+}

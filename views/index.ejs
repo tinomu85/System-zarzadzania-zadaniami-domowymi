@@ -1,0 +1,40 @@
+
+<form method="GET" action="/" class="filter-panel">
+  <select name="status" onchange="this.form.submit()">
+    <option value="">All tasks</option>
+    <option value="active" <%= status === 'active' ? 'selected' : '' %>>Only active</option>
+    <option value="done" <%= status === 'done' ? 'selected' : '' %>>Only completed</option>
+  </select>
+</form>
+
+<% tasks.forEach(task => { %>
+  <div class="task <%= task.isDone ? 'done' : (new Date(task.deadline) < new Date() ? 'overdue' : '') %>">
+    <div class="task-info">
+      <div class="task-title">
+        <%= task.title %>
+        <% if (!task.isDone && new Date(task.deadline) < new Date()) { %>
+          <span class="overdue-badge">Overdue</span>
+        <% } %>
+      </div>
+      <% if (task.description && task.description.trim()) { %>
+        <div class="task-description"><%= task.description %></div>
+      <% } %>
+      <span class="task-deadline">
+        <%= new Date(task.deadline).toLocaleDateString() %>
+        <%= new Date(task.deadline).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}) %>
+      </span>
+    </div>
+    <div class="task-actions">
+      <% if (!task.isDone) { %>
+        <form action="/done/<%= task._id %>" method="POST">
+          <button>Done</button>
+        </form>
+        <a href="/edit/<%= task._id %>" class="edit">Edit</a>
+      <% } %>
+      <form action="/delete/<%= task._id %>" method="POST">
+        <button class="delete">Delete</button>
+      </form>
+    </div>
+  </div>
+<% }) %>
+<a href="/add" class="add-btn">Add Task</a>
