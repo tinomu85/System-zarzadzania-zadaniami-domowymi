@@ -1,16 +1,40 @@
 <form action="/edit/<%= task._id %>" method="POST">
-  <input type="text" name="title" value="<%= task.title %>" required />
+  <label>
+    Title:
+    <input
+      type="text"
+      name="title"
+      value="<%= task.title %>"
+      required
+      autocomplete="off"
+    />
+  </label>
+  <br />
 
-  <textarea name="description" placeholder="description">
+  <label>
+    Description:
+    <textarea
+      name="description"
+      placeholder="Description"
+      rows="3"
+      autocomplete="off"
+    >
 <%= task.description || '' %></textarea
-  >
+    >
+  </label>
+  <br />
 
-  <input
-    type="datetime-local"
-    name="deadline"
-    value="<%= new Date(task.deadline).toISOString().slice(0,16) %>"
-    required
-  />
+  <label>
+    Deadline:
+    <input
+      type="datetime-local"
+      name="deadline"
+      value="<%= new Date(task.deadline).toISOString().slice(0,16) %>"
+      required
+    />
+  </label>
+  <br />
+
   <button type="submit">Update</button>
 </form>
 <a href="/">Back</a>
