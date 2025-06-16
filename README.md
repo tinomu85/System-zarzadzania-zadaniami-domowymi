@@ -77,22 +77,22 @@ homework-mvc/
 1. **Clone the repository**
 
 ```bash
-   git clone https://github.com/tinomu85/System-zarzadzania-zadaniami-domowymi
+git clone https://github.com/tinomu85/System-zarzadzania-zadaniami-domowymi
 
 ```
 
 2. **Install dependencies**
 
 ```bash
-   npm install
+npm install
 ```
 
 3. **Set up environment variables**
    Create a .env file in the root directory:
 
 ```bash
-   PORT=3000
-   MONGO_URI=mongodb://localhost:27017/homeworkdb
+PORT=3000
+MONGO_URI=mongodb+srv://admin:uc18A9f9PSQmq30x@dev.od2l1dd.mongodb.net/?retryWrites=true&w=majority&appName=dev
 ```
 
 4. **Run MongoDB**
@@ -101,17 +101,17 @@ homework-mvc/
 5. **Start the server**
 
 ```bash
-   node app.js
+node app.js
 ```
 
 For development with auto-reload:
 
 ```bash
-   nodemon app.js
+nodemon app.js
 ```
 
 6. **Open in browser:**
-   http://localhost:3000
+http://localhost:3000
 
 ---
 
