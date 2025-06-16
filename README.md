@@ -95,10 +95,7 @@ PORT=3000
 MONGO_URI=mongodb+srv://admin:uc18A9f9PSQmq30x@dev.od2l1dd.mongodb.net/?retryWrites=true&w=majority&appName=dev
 ```
 
-4. **Run MongoDB**
-   Make sure your MongoDB server is running (by default on mongodb://localhost:27017).
-
-5. **Start the server**
+4. **Start the server**
 
 ```bash
 node app.js
@@ -110,7 +107,7 @@ For development with auto-reload:
 nodemon app.js
 ```
 
-6. **Open in browser:**
+5. **Open in browser:**
 http://localhost:3000
 
 ---
